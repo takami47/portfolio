@@ -1,86 +1,116 @@
 @charset "UTF-8";
-html {
-    font-family: serif;
-}
 
+/* ===== Base ===== */
+html { font-family: serif; }
 body {
-    background-color: mintcream;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;  /* 横はみ出し防止 */
-    overscroll-behavior-y: none;   
-}
-#back_img {
-    background-image: url(../images/back_mountains.jpg);
-    background-blend-mode: darken;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #007acc; /* ← 好きな色に変更OK */
-    padding: 0px 10px;
-    color: white;
-}
-.left-menu {
-  display: flex;
-  gap: 30px;
-}
-.right-menu {
-  font-weight: bold;
-}
-.mokuji {
+  background-color: mintcream;
   margin: 0;
-  font-size: 18px;
+  padding: 0;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
+
+/* ===== Hero Background ===== */
+#back_img {
+  background-image: url(../images/back_mountains.jpg);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* ===== Header / Nav ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007acc;
+  padding: 8px 12px;
+  color: #fff;
+}
+.left-menu { display: flex; gap: 30px; align-items: center; }
+.right-menu { font-weight: bold; }
+.mokuji { margin: 0; font-size: 18px; }
+
+/* ヘッダー内リンクを白に（コントラスト改善） */
 .mokuji a {
-  text-decoration: none;   /* 下線を消す */
-  color: black;            /* 文字色を黒に（お好みで） */
+  text-decoration: none;
+  color: #fff;
 }
+.mokuji a:hover, .mokuji a:focus {
+  text-decoration: underline;
+}
+
+/* ===== Content ===== */
 .text_box {
-    
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;      /* 画面幅が狭い時に自動で折り返し */
+  gap: 24px;
+  justify-content: center;
+  padding: 40px 16px;
 }
+
 article {
-    background-color: rgba(255, 255, 255, 0.5); /* 白の半透明 */
-    color: #111;
-    padding: 20px;
-    margin: 40px;
-    border-radius: 60px;
-    width: 300px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #111;
+  padding: 20px;
+  border-radius: 20px;
+  width: 320px;         /* 少し広げる */
+  backdrop-filter: blur(1px);
 }
-article h1 {
-    text-align: center;  
+article h1 { text-align: center; margin-top: 0; }
+h1 { font-weight: bold; font-size: 25px; }
+
+/* ===== Lists / Icons ===== */
+ol { padding-left: 18px; }
+ol li { font-size: 20px; margin: 10px 0; }
+li { font-size: 15px; }
+
+#othello_icon, #shogi_icon {
+  width: 33px;
+  vertical-align: middle;
+  position: relative;
 }
-h1 {
-    font-weight: bold;
-    font-size: 25px;
-    justify-content: center; 
+#othello_icon { top: -6px; }
+#shogi_icon { top: -8px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .mokuji { font-size: 17px; }
+  article { width: 360px; }
 }
 
-ol {
-    gap: 30px;
-}
-ol li {
-    font-size: 20px;
-}
-#othello_icon {
-    width: 33px;
-    vertical-align: middle;
-    position: relative;
-    top: -6px; 
-}
-#shogi_icon {
-    width: 33px;
-    vertical-align: middle;
-    position: relative;
-    top: -8px; 
-}
-li {
-    font-size: 15px;
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    text-align: center;
+  }
+  .left-menu, .right-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .mokuji { font-size: 16px; }
+  .text_box {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 12px;
+  }
+  article {
+    width: 92%;
+    margin: 0 auto;
+    border-radius: 16px;
+  }
+  h1 { font-size: 22px; }
+  ol li { font-size: 18px; }
+  li { font-size: 15px; }
 }
 
+@media (max-width: 360px) {
+  .mokuji { font-size: 15px; }
+  h1 { font-size: 20px; }
+  article { padding: 16px; }
+}
