@@ -1,0 +1,86 @@
+@charset "UTF-8";
+html {
+    font-family: serif;
+}
+
+body {
+    background-color: mintcream;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  /* 横はみ出し防止 */
+    overscroll-behavior-y: none;   
+}
+#back_img {
+    background-image: url(../images/back_mountains.jpg);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007acc; /* ← 好きな色に変更OK */
+    padding: 0px 10px;
+    color: white;
+}
+.left-menu {
+  display: flex;
+  gap: 30px;
+}
+.right-menu {
+  font-weight: bold;
+}
+.mokuji {
+  margin: 0;
+  font-size: 18px;
+}
+.mokuji a {
+  text-decoration: none;   /* 下線を消す */
+  color: black;            /* 文字色を黒に（お好みで） */
+}
+.text_box {
+    
+    display: flex;
+}
+article {
+    background-color: rgba(255, 255, 255, 0.5); /* 白の半透明 */
+    color: #111;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 60px;
+    width: 300px;
+}
+article h1 {
+    text-align: center;  
+}
+h1 {
+    font-weight: bold;
+    font-size: 25px;
+    justify-content: center; 
+}
+
+ol {
+    gap: 30px;
+}
+ol li {
+    font-size: 20px;
+}
+#othello_icon {
+    width: 33px;
+    vertical-align: middle;
+    position: relative;
+    top: -6px; 
+}
+#shogi_icon {
+    width: 33px;
+    vertical-align: middle;
+    position: relative;
+    top: -8px; 
+}
+li {
+    font-size: 15px;
+}
+
