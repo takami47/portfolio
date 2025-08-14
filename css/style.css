@@ -67,6 +67,21 @@ ol { padding-left: 18px; }
 ol li { font-size: 20px; margin: 10px 0; }
 li { font-size: 15px; }
 
+/* 装飾なし＆色固定のリンク */
+.link-plain,
+.link-plain:visited,
+.link-plain:hover,
+.link-plain:active {
+  text-decoration: none;  /* 下線なし */
+  color: inherit;         /* 親の文字色を継承＝色変化しない */
+}
+
+/* アクセシビリティ用：キーボード操作のフォーカスは見えるように */
+.link-plain:focus-visible {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
 #othello_icon, #shogi_icon {
   width: 33px;
   vertical-align: middle;
